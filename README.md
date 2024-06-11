@@ -43,4 +43,5 @@ solana-keygen new --outfile {keypair-path}/unstaked-identity.json
   
 How can you contribute?
 
-Please stake with my 0% Native/MEV Commission through Solana Beach! https://solanabeach.io/validator/5yHqB3NxovCEMUniQCboaPRMyyQ7kQQF4QqvC4vaz78z 
+Please stake with my 0% Native/MEV Commission through Solana Beach! No commission at all! 
+https://solanabeach.io/validator/5yHqB3NxovCEMUniQCboaPRMyyQ7kQQF4QqvC4vaz78z 

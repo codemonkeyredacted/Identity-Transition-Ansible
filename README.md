@@ -30,7 +30,7 @@ ansible-playbook -i ~/Identity-Transition-Ansible/inventory.ini ~/Identity-Trans
 Assumptions:
 
 1. You have generated SSH keys for a SCP connection to be established
-2. You have accepted the fingerprint of the host keys. I added -o StrictHostKeyChecking=no to my SCP command within the tasks. Feel free to remove that if you would like to manually accept the fingerprints.
+2. You have accepted the fingerprint of the host keys. I added -o StrictHostKeyChecking=no to my SCP command within the tasks. Feel free to remove that if you would like to manually accept the fingerprints. (Safer)
 3. You have created a symlink for your staked identity or your staked identity is the main keypair for the validator. Ex: ln -sf /home/sol/{CurrentValidatorIdentity}.json /home/sol/staked-identity.json
 4. You have changed your startup file to the following: 
   --identity ~/identity.json \

@@ -1,0 +1,15 @@
+---
+- name: Wait for restart window
+  command: solana-validator -l {{ ledger_location }} wait-for-restart-window --min-idle-time 2 --skip-new-snapshot-check
+
+- name: Set validator identity
+  command: solana-validator -l {{ ledger_location }} set-identity {{ staked_identity_location_folder }}/unstaked-identity.json
+
+- name: Create symlink for identity.json
+  file:
+    src: "{{ staked_identity_location_folder }}/unstaked-identity.json"
+    dest: "{{ staked_identity_location_folder }}/identity.json"
+    state: link
+
+- name: Copy tower file to remote server
+  command: scp -o StrictHostKeyChecking=no {{ ledger_location }}/tower-1_9-{{ staked_identity_pubkey }}.bin {{ scp_username }}@{{ hotspare_ip }}:{{ ledger_location }}

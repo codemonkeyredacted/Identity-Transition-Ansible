@@ -1,0 +1,9 @@
+---
+- name: Set validator identity with tower requirement
+  command: solana-validator -l {{ ledger_location }} set-identity --require-tower {{ staked_identity_location }}
+
+- name: Create symlink for identity.json
+  file:
+    src: "{{ staked_identity_location }}"
+    dest: "{{ staked_identity_location_folder }}/identity.json"
+    state: link

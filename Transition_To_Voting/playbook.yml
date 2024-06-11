@@ -1,0 +1,20 @@
+---
+- name: Copy from Temp Validator to Prod Validator
+  hosts: hotspare_target
+  vars:
+    ledger_location: /ledger
+    staked_identity_location_folder: /home/sol
+    scp_username: sol
+    voting_ip: 10.0.0.2
+    staked_identity_pubkey: {IDENTITYPUBKEY}
+  roles:
+    - solana_validator
+
+- name: Apply Transition To Prod Validator
+  hosts: voting_validator
+  vars:
+    ledger_location: /ledger
+    staked_identity_location_folder: /home/sol
+    staked_identity_location: /home/sol/staked-identity.json
+  roles:
+    - apply_transition

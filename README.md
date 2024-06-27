@@ -4,7 +4,7 @@ Ensure you set the following variables:
 1. Within inventory.ini input your IP for voting_validator (Current PROD Validator) and input your IP for hotspare_target (Current Hot Spare on Standby)
 2. Within playbook.yml define the following variables (examples below):
 
-Copy from Prod Validator to Temp Validator variables:
+### Copy from Prod Validator to Temp Validator variables:
 
 ledger_location: /ledger
 staked_identity_location_folder: /home/sol
@@ -12,7 +12,7 @@ scp_username: sol
 hotspare_ip: Use same hotspare IP from within inventory.ini
 staked_identity_pubkey: {STAKEDPUBKEY}
 
-Apply Transition to Temp Validator variables:
+### Apply Transition to Temp Validator variables:
 
 ledger_location: /ledger
 staked_identity_location_folder: /home/sol

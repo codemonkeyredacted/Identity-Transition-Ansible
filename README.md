@@ -1,4 +1,7 @@
 # Identity-Transition-Ansible
+
+These Ansible playbooks allow you to easily migrate identities between your production validator and a standby node. The purpose of this repository is to share an easy-to-use, pre-built script to maintain 100% uptime and ensure the health of the Solana network.
+
 Ensure you set the following variables:
 
 1. Within inventory.ini input your IP for voting_validator (Current PROD Validator) and input your IP for hotspare_target (Current Hot Spare on Standby)
@@ -6,16 +9,16 @@ Ensure you set the following variables:
 
 ### Copy from Prod Validator to Temp Validator variables:
 
-ledger_location: /ledger
-staked_identity_location_folder: /home/sol
-scp_username: sol
-hotspare_ip: Use same hotspare IP from within inventory.ini
+ledger_location: /ledger \
+staked_identity_location_folder: /home/sol \
+scp_username: sol \
+hotspare_ip: Use same hotspare IP from within inventory.ini \
 staked_identity_pubkey: {STAKEDPUBKEY}
 
 ### Apply Transition to Temp Validator variables:
 
-ledger_location: /ledger
-staked_identity_location_folder: /home/sol
+ledger_location: /ledger \
+staked_identity_location_folder: /home/sol \
 staked_identity_location: /home/sol/staked-identity.json
 
 ===========================================================================
